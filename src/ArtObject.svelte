@@ -1,6 +1,6 @@
 <script>
   export let description;
-  export let colors;
+  export let colors = [];
   export let period;
   export let image = '';
   export let title;
@@ -11,8 +11,10 @@
 <article>
   <img src={image} alt={title} />
   <section>
-    <div>
-
+    <div class='colors-container'>
+      {#each colors as color}
+        <div class="color-div" style="background-color: {color.color}"></div>
+      {/each}
     </div>
     <div>
       <h4>Title:</h4>
@@ -54,6 +56,19 @@
     overflow: auto;
     height: 350px;
     width: 97%;
+  }
+
+  .colors-container {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .color-div {
+    height: 25px;
+    width: 25px;
+    margin: 0;
   }
 
   h4 {
