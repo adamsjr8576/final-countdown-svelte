@@ -1,6 +1,7 @@
 <script>
 	import { categoryOptions, selectedOption } from './stores.js';
 	import CategorySelector from './CategorySelector.svelte';
+	import PeriodContainer from './PeriodContainer.svelte';
 
 </script>
 
@@ -10,6 +11,9 @@
 	</header>
 	{#if $selectedOption.length === 0}
 	<CategorySelector />
+	{/if}
+	{#if $selectedOption === 'Periods'}
+	<Periods />
 	{/if}
 </main>
 
