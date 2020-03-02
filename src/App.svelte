@@ -1,51 +1,16 @@
 <script>
 	import { categoryOptions, selectedOption } from './stores.js';
-	import { getAllPeriods } from './apiCalls.js'
+	import CategorySelector from './CategorySelector.svelte';
 
-	const getPeriods = async () => {
-		let periods = await getAllPeriods(1);
-		categoryOptions.update(store => [...store, ...periods.records]);
-		if (periods.info.pages > 1) {
-      for (var i = 2; i <= periods.info.pages; i ++) {
-        periods = await getAllPeriods(i);
-        categoryOptions.update(store => [...store, ...periods.records]);
-      }
-    }
-		selectedOption.update(store => 'Periods');
-	}
 </script>
 
 <main>
 	<header>
 		<h1>Harvard Art Museum</h1>
 	</header>
-	<h4>Please select a category below: </h4>
-	<section>
-		<article class='period-article' on:click={getPeriods}>
-			<h2>Period</h2>
-			<p>Contains the periods used to describe items
- 			in the Harvard Art Museums collections.
-			</p>
-		</article>
-		<article class='place-article'>
-			<h2>Place</h2>
-			<p>Contains the location used to describe items
- 			in the Harvard Art Museums collections.
-			</p>
-		</article>
-		<article class='classification-article'>
-			<h2>Classification</h2>
-			<p>Contains the Classifications used to describe
- 			item in the Harvard Art Museums collections.
-			</p>
-		</article>
-		<article class='gallery-article'>
-			<h2>Gallery</h2>
-			<p>Contains the Galleries and their items
- 			in the Harvard Art Museums collections.
-			</p>
-		</article>
-	</section>
+	{#if $selectedOption.length === 0}
+	<CategorySelector />
+	{/if}
 </main>
 
 <style>
@@ -72,66 +37,6 @@
 		margin: 0;
 		width: 100%;
 		text-decoration: underline;
-	}
-
-	h4 {
-		width: 100%;
-		margin: 0;
-		margin-bottom: 25px;
-	}
-
-	section {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		height: 550px;
-		width: 80%;
-	}
-
-	article {
-		width: 500px;
-		height: 275px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		tab-index: 10;
-	}
-
-	article:hover,
-	article:focus {
-		transform: scale(1.03);
-	}
-
-	article:active {
-		transform: scale(1);
-	}
-
-	.period-article {
-		background-color: #C4E790;
-	}
-
-	.place-article {
-		background-color: #90E7DE;
-	}
-
-	.classification-article {
-		background-color: #B390E7;
-	}
-
-	.gallery-article {
-		background-color: #E79098;
-	}
-
-	h2 {
-		font-size: 2.5em;
-	}
-
-	p {
-		width: 80%;
-		text-align: center;
 	}
 
 </style>
