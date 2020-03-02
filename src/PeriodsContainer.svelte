@@ -71,7 +71,7 @@
     border: 0;
     border-radius: 5px;
     border: 2px solid black;
-    margin-right: 15px;
+    margin: 0 15px;
     width: 200px;
     outline: 0;
     background-color: #F6F6FB;
@@ -82,8 +82,19 @@
     border: 2px solid #ff3e00;
   }
 
-  .reset-button {
-    font-size: 2em;
+  button {
+    font-size: 1em;
+    width: 125px;
+    margin: 0 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: #F6F6FB;
+    cursor: pointer;
+  }
+
+  button:hover,
+  button:focus {
+    border: 2px solid #ff3e00;
   }
 
   div {
