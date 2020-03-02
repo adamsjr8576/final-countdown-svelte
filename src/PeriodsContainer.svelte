@@ -26,12 +26,19 @@
       searchPeriods();
     }
   }
+
+  const handleReset = () => {
+    search = '';
+    searchPeriods();
+  }
+
 </script>
 
 <section>
   <form>
     <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
     <button on:click|preventDefault={searchPeriods}>Search</button>
+    <button on:click|preventDefault={handleReset}>Reset</button>
   </form>
   <div>
     <p hidden={!hasError}>There are no matches for {search}</p>
@@ -55,6 +62,11 @@
     align-items: center;
     justify-content: center;
     width: 80%;
+    margin-bottom: 15px;
+  }
+
+  input {
+
   }
 
   div {
