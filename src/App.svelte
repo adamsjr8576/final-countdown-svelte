@@ -1,5 +1,27 @@
 <script>
 	import { categoryOptions, selectedOption } from './stores.js';
+
+	const getAllPeriods = async () => {
+		let res = await fetch('https://api.harvardartmuseums.org/period?size=100&page=1&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb');
+		let periods = await res.json();
+		if (res.ok) {
+			categoryOptions.update(store => [...store, ...periods.records]);
+			if (periods.info.pages > 1) {
+				for (var i = 2; i <= periods.info.pages; i ++) {
+					let res = await fetch(`https://api.harvardartmuseums.org/period?size=100&page=${i}&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
+					let periods = await res.json();
+					if (res.ok) {
+							categoryOptions.update(store => [...store, ...periods.records]);
+						} else {
+							throw new Error(text);
+					}
+				}
+			}
+		} else {
+			throw new Error(periods);
+		}
+		console.log($categoryOptions);
+	}
 </script>
 
 <main>
@@ -8,7 +30,7 @@
 	</header>
 	<h4>Please select a category below: </h4>
 	<section>
-		<article class='period-article'>
+		<article class='period-article' on:click={getAllPeriods}>
 			<h2>Period</h2>
 			<p>Contains the periods used to describe items
  			in the Harvard Art Museums collections.
