@@ -38,7 +38,7 @@
   <form>
     <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
     <button on:click|preventDefault={searchPeriods}>Search</button>
-    <button on:click|preventDefault={handleReset}>Reset</button>
+    <button on:click|preventDefault={handleReset} class="reset-button">Reset</button>
   </form>
   <div>
     <p hidden={!hasError}>There are no matches for {search}</p>
@@ -66,7 +66,24 @@
   }
 
   input {
+    font-size: 1em;
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-right: 15px;
+    width: 200px;
+    outline: 0;
+    background-color: #F6F6FB;
+  }
 
+  input:hover,
+  input:focus {
+    border: 2px solid #ff3e00;
+  }
+
+  .reset-button {
+    font-size: 2em;
   }
 
   div {

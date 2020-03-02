@@ -1,9 +1,12 @@
 <script>
   export let name;
   export let id;
+  const handleClick = () => {
+    console.log(id);
+  }
 </script>
 
-<p>{name}</p>
+<p on:click={handleClick} >{name}</p>
 
 <style>
 
