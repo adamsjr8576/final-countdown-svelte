@@ -8,8 +8,8 @@ export const getAllPeriods = async (page) => {
   }
 }
 
-export const getObjectsByPeriod = async () => {
-  let res = await fetch(`https://api.harvardartmuseums.org/object?period=7411&size=100&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
+export const getObjectsByPeriod = async (periodId) => {
+  let res = await fetch(`https://api.harvardartmuseums.org/object?period=${periodId}&size=100&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
   let objects = await res.json();
   if (res.ok) {
     return objects;

@@ -97,6 +97,10 @@
     border: 2px solid #ff3e00;
   }
 
+  button:active {
+    transform: scale(.95);
+  }
+
   div {
     width: 90%;
     display: flex;

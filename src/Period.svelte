@@ -1,8 +1,11 @@
 <script>
+  import { getObjectsByPeriod } from './apiCalls.js';
+  import { artObjects } from './stores.js';
   export let name;
   export let id;
-  const handleClick = () => {
-    console.log(id);
+  const handleClick = async () => {
+    const objects = await getObjectsByPeriod(id);
+    artObjects.set(objects.records);
   }
 </script>
 
