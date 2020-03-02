@@ -2,21 +2,39 @@
   import { categoryOptions, selectedOption } from './stores.js';
   import Period from './Period.svelte';
   let search = '';
+  let hasError = false;
   let periods = $categoryOptions;
+
   const searchPeriods = () => {
-    const filteredPeriods = $categoryOptions.filter(period => period.name.includes(search));
+    hasError = false;
+    const filteredPeriods = $categoryOptions.filter(period => {
+      const nameLowerCase = period.name.toLowerCase();
+      const searchLowerCase = search.toLowerCase();
+      return nameLowerCase.includes(searchLowerCase)
+    });
     if (filteredPeriods.length) {
       periods = filteredPeriods
+    } else {
+      periods = [];
+      hasError = true;
+    }
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searchPeriods();
     }
   }
 </script>
 
 <section>
   <form>
-    <input bind:value={search} placeholder="search period..." />
-    <button type="button" on:click={searchPeriods}>Search</button>
+    <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
+    <button on:click|preventDefault={searchPeriods}>Search</button>
   </form>
   <div>
+    <p hidden={!hasError}>There are no matches for {search}</p>
     {#each periods as period}
       <Period name={period.name} id={period.id} />
     {/each}
