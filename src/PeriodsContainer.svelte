@@ -1,16 +1,24 @@
 <script>
   import { categoryOptions, selectedOption } from './stores.js';
   import Period from './Period.svelte';
+  let search = '';
+  let periods = $categoryOptions;
+  const searchPeriods = () => {
+    const filteredPeriods = $categoryOptions.filter(period => period.name.includes(search));
+    if (filteredPeriods.length) {
+      periods = filteredPeriods
+    }
+  }
 </script>
 
 <section>
   <form>
-    <input placeholder="search period..." />
-    <button type="button">Search</button>
+    <input bind:value={search} placeholder="search period..." />
+    <button type="button" on:click={searchPeriods}>Search</button>
   </form>
   <div>
-    {#each $categoryOptions as categoryOption}
-      <Period name={categoryOption.name} id={categoryOption.id} />
+    {#each periods as period}
+      <Period name={period.name} id={period.id} />
     {/each}
   </div>
 </section>
@@ -32,12 +40,13 @@
   }
 
   div {
-    width: 85%;
+    width: 90%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     height: 550px;
     overflow: auto;
+    padding: 0 25px;
   }
 </style>
