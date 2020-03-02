@@ -1,5 +1,5 @@
 <script>
-
+	import { categoryOptions, selectedOption } from './stores.js';
 </script>
 
 <main>
@@ -58,6 +58,7 @@
 		font-weight: 100;
 		margin: 0;
 		width: 100%;
+		text-decoration: underline;
 	}
 
 	h4 {
