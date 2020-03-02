@@ -24,7 +24,6 @@
 	main {
 		text-align: center;
 		padding: 1em;
-		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
