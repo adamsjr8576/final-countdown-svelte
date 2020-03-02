@@ -1,7 +1,7 @@
 <script>
 	import { categoryOptions, selectedOption } from './stores.js';
 	import CategorySelector from './CategorySelector.svelte';
-
+	import PeriodsContainer from './PeriodsContainer.svelte';
 </script>
 
 <main>
@@ -9,7 +9,10 @@
 		<h1>Harvard Art Museum</h1>
 	</header>
 	{#if $selectedOption.length === 0}
-	<CategorySelector />
+		<CategorySelector />
+	{/if}
+	{#if $selectedOption === "Periods"}
+		<PeriodsContainer />
 	{/if}
 </main>
 
