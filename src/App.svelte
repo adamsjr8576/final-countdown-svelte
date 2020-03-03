@@ -1,7 +1,8 @@
 <script>
-	import { categoryOptions, selectedOption } from './stores.js';
+	import { categoryOptions, selectedOption, artObjects } from './stores.js';
 	import CategorySelector from './CategorySelector.svelte';
 	import PeriodsContainer from './PeriodsContainer.svelte';
+	import ArtObjectscontainer from './ArtObjectscontainer.svelte';
 </script>
 
 <main>
@@ -11,16 +12,17 @@
 	{#if $selectedOption.length === 0}
 		<CategorySelector />
 	{/if}
-	{#if $selectedOption === "Periods"}
+	{#if $selectedOption === "Periods" && !$artObjects.length}
 		<PeriodsContainer />
+	{/if}
+	{#if $artObjects.length}
+		<ArtObjectscontainer />
 	{/if}
 </main>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
