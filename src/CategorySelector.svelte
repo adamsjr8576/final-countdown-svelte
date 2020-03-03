@@ -1,10 +1,10 @@
 <script>
   import { categoryOptions, selectedOption } from './stores.js';
-	import { getAllPeriods } from './apiCalls.js';
+	import { getAllPeriods, getAllPlaces } from './apiCalls.js';
 
   const getPeriods = async () => {
 		let periods = await getAllPeriods(1);
-		categoryOptions.update(store => [...store, ...periods.records]);
+		categoryOptions.set(periods.records);
 		if (periods.info.pages > 1) {
       for (var i = 2; i <= periods.info.pages; i ++) {
         periods = await getAllPeriods(i);
@@ -13,6 +13,18 @@
     }
 		selectedOption.update(store => 'Periods');
 	}
+
+  const getPlaces = async () => {
+    let places = await getAllPlaces(1);
+    categoryOptions.set(places.records);
+    if (places.info.pages > 1) {
+      for (var i = 2; i <= places.info.pages; i ++) {
+        places = await getAllPlaces(i);
+        categoryOptions.update(store => [...store, ...places.records]);
+      }
+    }
+		selectedOption.update(store => 'Places');
+  }
 
 </script>
 
@@ -24,7 +36,7 @@
     in the Harvard Art Museums collections.
     </p>
   </article>
-  <article class='place-article'>
+  <article class='place-article' on:click={getPlaces}>
     <h2>Place</h2>
     <p>Contains the location used to describe items
     in the Harvard Art Museums collections.

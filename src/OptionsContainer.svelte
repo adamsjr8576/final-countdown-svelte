@@ -1,21 +1,22 @@
 <script>
   import { categoryOptions, selectedOption } from './stores.js';
   import Period from './Period.svelte';
+  import Place from './Place.svelte'
   let search = '';
   let hasError = false;
-  let periods = $categoryOptions;
+  let options = $categoryOptions;
 
-  const searchPeriods = () => {
+  const searchOptions = () => {
     hasError = false;
-    const filteredPeriods = $categoryOptions.filter(period => {
-      const nameLowerCase = period.name.toLowerCase();
+    const filteredOptions = $categoryOptions.filter(option => {
+      const nameLowerCase = option.name.toLowerCase();
       const searchLowerCase = search.toLowerCase();
       return nameLowerCase.includes(searchLowerCase)
     });
-    if (filteredPeriods.length) {
-      periods = filteredPeriods
+    if (filteredOptions.length) {
+      options = filteredOptions
     } else {
-      periods = [];
+      options = [];
       hasError = true;
     }
   }
@@ -23,13 +24,13 @@
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      searchPeriods();
+      searchOptions();
     }
   }
 
   const handleReset = () => {
     search = '';
-    searchPeriods();
+    searchOptions();
   }
 
   const handleGoBack = () => {
@@ -42,13 +43,17 @@
   <form>
     <button class="back-button" on:click={handleGoBack} >Back</button>
     <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
-    <button on:click|preventDefault={searchPeriods}>Search</button>
+    <button on:click|preventDefault={searchOptions}>Search</button>
     <button on:click|preventDefault={handleReset} class="reset-button">Reset</button>
   </form>
   <div>
     <p hidden={!hasError}>There are no matches for {search}</p>
-    {#each periods as period}
-      <Period name={period.name} id={period.id} />
+    {#each options as option}
+      {#if $selectedOption === 'Places'}
+        <Place name={option.name} pathForward={option.pathforward} />
+      {:else}
+        <Period name={option.name} id={option.id} />
+      {/if}
     {/each}
   </div>
 </section>
@@ -60,6 +65,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
   }
 
   form {

@@ -17,3 +17,13 @@ export const getObjectsByPeriod = async (periodId) => {
     throw new Error(objects);
   }
 }
+
+export const getAllPlaces = async (page) => {
+  let res = await fetch(`https://api.harvardartmuseums.org/place?size=100&page=${page}&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
+  let places = await res.json();
+  if (res.ok) {
+    return places;
+  } else {
+    throw new Error(places);
+  }
+}

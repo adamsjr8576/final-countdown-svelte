@@ -1,7 +1,7 @@
 <script>
 	import { categoryOptions, selectedOption, artObjects } from './stores.js';
 	import CategorySelector from './CategorySelector.svelte';
-	import PeriodsContainer from './PeriodsContainer.svelte';
+	import OptionsContainer from './OptionsContainer.svelte';
 	import ArtObjectscontainer from './ArtObjectscontainer.svelte';
 </script>
 
@@ -12,8 +12,8 @@
 	{#if $selectedOption.length === 0}
 		<CategorySelector />
 	{/if}
-	{#if $selectedOption === "Periods" && !$artObjects.length}
-		<PeriodsContainer />
+	{#if $selectedOption.length > 0 && !$artObjects.length}
+		<OptionsContainer />
 	{/if}
 	{#if $artObjects.length}
 		<ArtObjectscontainer />
