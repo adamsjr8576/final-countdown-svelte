@@ -11,7 +11,7 @@
         categoryOptions.update(store => [...store, ...periods.records]);
       }
     }
-		selectedOption.update(store => 'Periods');
+		selectedOption.update(store => 'period');
 	}
 
   const getPlaces = async () => {
@@ -23,7 +23,7 @@
         categoryOptions.update(store => [...store, ...places.records]);
       }
     }
-		selectedOption.update(store => 'Places');
+		selectedOption.update(store => 'place');
   }
 
 </script>

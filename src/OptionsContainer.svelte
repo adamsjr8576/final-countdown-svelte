@@ -1,7 +1,6 @@
 <script>
   import { categoryOptions, selectedOption } from './stores.js';
   import Period from './Period.svelte';
-  import Place from './Place.svelte'
   let search = '';
   let hasError = false;
   let options = $categoryOptions;
@@ -9,10 +8,10 @@
   const searchOptions = () => {
     hasError = false;
     const filteredOptions = $categoryOptions.filter(option => {
-      const nameLowerCase = option.name.toLowerCase();
-      const searchLowerCase = search.toLowerCase();
-      return nameLowerCase.includes(searchLowerCase)
-    });
+        const nameLowerCase = option.name.toLowerCase();
+        const searchLowerCase = search.toLowerCase();
+        return nameLowerCase.includes(searchLowerCase)
+      });
     if (filteredOptions.length) {
       options = filteredOptions
     } else {
@@ -49,11 +48,7 @@
   <div>
     <p hidden={!hasError}>There are no matches for {search}</p>
     {#each options as option}
-      {#if $selectedOption === 'Places'}
-        <Place name={option.name} pathForward={option.pathforward} />
-      {:else}
-        <Period name={option.name} id={option.id} />
-      {/if}
+      <Period name={option.name} id={option.id} />
     {/each}
   </div>
 </section>
