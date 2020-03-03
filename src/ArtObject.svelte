@@ -10,7 +10,6 @@
 
 <article>
   <img src={image} alt={title} />
-  <section>
     <div class='colors-container'>
       {#each colors as color}
         <div class="color-div" style="background-color: {color.color}"></div>
@@ -32,7 +31,6 @@
       <h4>Description: </h4>
       <p class="description-p">{description}</p>
     </div>
-  </section>
 </article>
 
 <style>
@@ -46,6 +44,7 @@
     margin: 15px;
     border: 2px solid black;
     background-color: #F6F6FB;
+    overflow: auto;
   }
 
   article:hover {
@@ -53,14 +52,8 @@
   }
 
   img {
-    height: 250px;
+    height: auto;
     width: 350px;
-  }
-
-  section {
-    overflow: auto;
-    height: 350px;
-    width: 97%;
   }
 
   .colors-container {
@@ -86,15 +79,17 @@
   }
 
   .description-p {
-    height: 75px;
+    height: 100px;
     overflow: auto;
-    width: 85%;
+    width: 90%;
     border: 1px solid black;
     margin: auto;
+    padding: 10px
   }
 
   div {
-    margin: 15px 0;
+    width: 90%;
+    margin: 10px 0;
   }
 
 </style>
