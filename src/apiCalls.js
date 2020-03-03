@@ -28,6 +28,16 @@ export const getAllClassifications = async (page) => {
   }
 }
 
+export const getAllGalleries = async (page) => {
+  let res = await fetch(`https://api.harvardartmuseums.org/gallery?size=100&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
+  let gallery = await res.json();
+  if (res.ok) {
+    return gallery;
+  } else {
+    throw new Error(gallery);
+  }
+}
+
 export const getObjects = async (period, periodId) => {
   let res = await fetch(`https://api.harvardartmuseums.org/object?${period}=${periodId}&size=100&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
   let objects = await res.json();
