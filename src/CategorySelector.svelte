@@ -1,6 +1,6 @@
 <script>
   import { categoryOptions, selectedOption, isLoading } from './stores.js';
-	import { getAllPeriods, getAllPlaces } from './apiCalls.js';
+	import { getAllPeriods, getAllPlaces, getAllClassifications } from './apiCalls.js';
 
   const getPeriods = async () => {
     isLoading.set(true);
@@ -30,6 +30,14 @@
 		selectedOption.update(store => 'place');
   }
 
+  const getClassifications = async () => {
+    isLoading.set(true);
+    let classifications = await getAllClassifications();
+    categoryOptions.set(classifications.records);
+    isLoading.set(false);
+		selectedOption.update(store => 'classification');
+  }
+
 </script>
 
 <h4>Please select a category below: </h4>
@@ -46,7 +54,7 @@
     in the Harvard Art Museums collections.
     </p>
   </article>
-  <article class='classification-article'>
+  <article class='classification-article' on:click={getClassifications}>
     <h2>Classification</h2>
     <p>Contains the Classifications used to describe
     item in the Harvard Art Museums collections.
