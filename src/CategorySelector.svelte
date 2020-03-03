@@ -1,8 +1,9 @@
 <script>
-  import { categoryOptions, selectedOption } from './stores.js';
+  import { categoryOptions, selectedOption, isLoading } from './stores.js';
 	import { getAllPeriods, getAllPlaces } from './apiCalls.js';
 
   const getPeriods = async () => {
+    isLoading.set(true);
 		let periods = await getAllPeriods(1);
 		categoryOptions.set(periods.records);
 		if (periods.info.pages > 1) {
@@ -11,10 +12,12 @@
         categoryOptions.update(store => [...store, ...periods.records]);
       }
     }
+    isLoading.set(false);
 		selectedOption.update(store => 'period');
 	}
 
   const getPlaces = async () => {
+    isLoading.set(true);
     let places = await getAllPlaces(1);
     categoryOptions.set(places.records);
     if (places.info.pages > 1) {
@@ -23,6 +26,7 @@
         categoryOptions.update(store => [...store, ...places.records]);
       }
     }
+    isLoading.set(false);
 		selectedOption.update(store => 'place');
   }
 

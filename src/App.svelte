@@ -1,14 +1,18 @@
 <script>
-	import { categoryOptions, selectedOption, artObjects } from './stores.js';
+	import { categoryOptions, selectedOption, artObjects, isLoading } from './stores.js';
 	import CategorySelector from './CategorySelector.svelte';
 	import OptionsContainer from './OptionsContainer.svelte';
 	import ArtObjectscontainer from './ArtObjectscontainer.svelte';
+	import IsLoading from './IsLoading.svelte';
 </script>
 
 <main>
 	<header>
 		<h1>Harvard Art Museum</h1>
 	</header>
+	{#if $isLoading === true}
+		<IsLoading />
+	{/if}
 	{#if $selectedOption.length === 0}
 		<CategorySelector />
 	{/if}

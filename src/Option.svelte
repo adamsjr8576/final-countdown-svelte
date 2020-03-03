@@ -1,12 +1,14 @@
 <script>
   import { getObjects } from './apiCalls.js';
-  import { artObjects, selectedOption } from './stores.js';
+  import { artObjects, selectedOption, isLoading } from './stores.js';
   export let name;
   export let id;
 
   const handleClick = async () => {
     const period = $selectedOption;
+    isLoading.set(true);
     const objects = await getObjects(period, id);
+    isLoading.set(false);
     artObjects.set(objects.records);
   }
 

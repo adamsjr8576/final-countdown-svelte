@@ -1,6 +1,6 @@
 <script>
   import { categoryOptions, selectedOption } from './stores.js';
-  import Period from './Period.svelte';
+  import Option from './Option.svelte';
   let search = '';
   let hasError = false;
   let options = $categoryOptions;
@@ -48,7 +48,7 @@
   <div>
     <p hidden={!hasError}>There are no matches for {search}</p>
     {#each options as option}
-      <Period name={option.name} id={option.id} />
+      <Option name={option.name} id={option.id} />
     {/each}
   </div>
 </section>

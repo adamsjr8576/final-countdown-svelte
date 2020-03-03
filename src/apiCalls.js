@@ -27,13 +27,3 @@ export const getAllPlaces = async (page) => {
     throw new Error(places);
   }
 }
-
-// export const getObjectsByPlace = async (placeId) => {
-//   let res = await fetch(`https://api.harvardartmuseums.org/object?place=${placeId}&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
-//   let objects = await res.json();
-//   if (res.ok) {
-//     return objects;
-//   } else {
-//     throw new Error(objects);
-//   }
-// }
