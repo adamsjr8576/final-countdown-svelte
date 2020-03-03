@@ -3,13 +3,15 @@
   import { artObjects } from './stores.js';
   export let name;
   export let id;
+
   const handleClick = async () => {
     const objects = await getObjectsByPeriod(id);
     artObjects.set(objects.records);
   }
+
 </script>
 
-<p on:click={handleClick} >{name}</p>
+<p on:click={handleClick} tabIndex=2 >{name}</p>
 
 <style>
 
@@ -19,11 +21,13 @@
     margin: 5px 10px;
     cursor: pointer;
     background-color: white;
+    outline: 0;
   }
 
-  p:hover {
+  p:hover,
+  p:focus {
     border: 2px solid #ff3e00;
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
 
   p:active {

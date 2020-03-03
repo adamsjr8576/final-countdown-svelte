@@ -40,7 +40,7 @@
 
 <section>
   <form>
-    <button on:click={handleGoBack} >Back</button>
+    <button class="back-button" on:click={handleGoBack} >Back</button>
     <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
     <button on:click|preventDefault={searchPeriods}>Search</button>
     <button on:click|preventDefault={handleReset} class="reset-button">Reset</button>
@@ -65,8 +65,8 @@
   form {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 80%;
+    justify-content: flex-start;
+    width: 90%;
     margin-bottom: 15px;
   }
 
@@ -104,6 +104,10 @@
 
   button:active {
     transform: scale(.95);
+  }
+
+  .back-button {
+    margin-right: 18%;
   }
 
   div {
