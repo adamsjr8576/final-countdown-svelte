@@ -44,7 +44,12 @@
     width: 350px;
     height: 550px;
     margin: 15px;
-    border: 1px solid black;
+    border: 2px solid black;
+    background-color: #F6F6FB;
+  }
+
+  article:hover {
+    border: 2px solid #ff3e00;
   }
 
   img {
