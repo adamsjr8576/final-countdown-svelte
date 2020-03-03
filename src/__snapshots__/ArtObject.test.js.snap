@@ -1,0 +1,570 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+Object {
+  "component": ArtObject {
+    "$$": Object {
+      "after_update": Array [],
+      "before_update": Array [],
+      "bound": Object {},
+      "callbacks": Object {},
+      "context": Map {},
+      "ctx": Array [
+        "A woman with a creepy smile",
+        Array [],
+        "Romantic Period",
+        "",
+        "The Mona Lisa",
+        "17th CE",
+        "Paint on Canvas",
+      ],
+      "dirty": Array [
+        -1,
+      ],
+      "fragment": Object {
+        "c": [Function],
+        "d": [Function],
+        "i": [Function],
+        "l": [Function],
+        "m": [Function],
+        "o": [Function],
+        "p": [Function],
+      },
+      "not_equal": [Function],
+      "on_destroy": Array [
+        [Function],
+      ],
+      "on_mount": Array [],
+      "props": Object {
+        "century": 5,
+        "colors": 1,
+        "description": 0,
+        "image": 3,
+        "medium": 6,
+        "period": 2,
+        "title": 4,
+      },
+      "update": [Function],
+    },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
+    "$set": [Function],
+  },
+  "container": <body>
+    <div>
+      <article
+        class="svelte-121edkc"
+      >
+        <img
+          alt="The Mona Lisa"
+          class="svelte-121edkc"
+        />
+         
+        <div
+          class="colors-container svelte-121edkc"
+        />
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Title:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            The Mona Lisa
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Time:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            17th CE
+             - 
+            Romantic Period
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Medium:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            Paint on Canvas
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Description:
+          </h4>
+           
+          <p
+            class="description-p svelte-121edkc"
+          >
+            A woman with a creepy smile
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`App should match the snapshot with colors or image passed as props 1`] = `
+Object {
+  "component": ArtObject {
+    "$$": Object {
+      "after_update": Array [],
+      "before_update": Array [],
+      "bound": Object {},
+      "callbacks": Object {},
+      "context": Map {},
+      "ctx": Array [
+        "A woman with a creepy smile",
+        Array [
+          "#93453",
+          "#34523",
+        ],
+        "Romantic Period",
+        "monalisa.jpg",
+        "The Mona Lisa",
+        "17th CE",
+        "Paint on Canvas",
+      ],
+      "dirty": Array [
+        -1,
+      ],
+      "fragment": Object {
+        "c": [Function],
+        "d": [Function],
+        "i": [Function],
+        "l": [Function],
+        "m": [Function],
+        "o": [Function],
+        "p": [Function],
+      },
+      "not_equal": [Function],
+      "on_destroy": Array [
+        [Function],
+      ],
+      "on_mount": Array [],
+      "props": Object {
+        "century": 5,
+        "colors": 1,
+        "description": 0,
+        "image": 3,
+        "medium": 6,
+        "period": 2,
+        "title": 4,
+      },
+      "update": [Function],
+    },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
+    "$set": [Function],
+  },
+  "container": <body>
+    <div>
+      <article
+        class="svelte-121edkc"
+      >
+        <img
+          alt="The Mona Lisa"
+          class="svelte-121edkc"
+          src="monalisa.jpg"
+        />
+         
+        <div
+          class="colors-container svelte-121edkc"
+        >
+          <div
+            class="color-div svelte-121edkc"
+          />
+          <div
+            class="color-div svelte-121edkc"
+          />
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Title:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            The Mona Lisa
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Time:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            17th CE
+             - 
+            Romantic Period
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Medium:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            Paint on Canvas
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Description:
+          </h4>
+           
+          <p
+            class="description-p svelte-121edkc"
+          >
+            A woman with a creepy smile
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`App should match the snapshot without colors or image passed as props 1`] = `
+Object {
+  "component": ArtObject {
+    "$$": Object {
+      "after_update": Array [],
+      "before_update": Array [],
+      "bound": Object {},
+      "callbacks": Object {},
+      "context": Map {},
+      "ctx": Array [
+        "A woman with a creepy smile",
+        Array [],
+        "Romantic Period",
+        "",
+        "The Mona Lisa",
+        "17th CE",
+        "Paint on Canvas",
+      ],
+      "dirty": Array [
+        -1,
+      ],
+      "fragment": Object {
+        "c": [Function],
+        "d": [Function],
+        "i": [Function],
+        "l": [Function],
+        "m": [Function],
+        "o": [Function],
+        "p": [Function],
+      },
+      "not_equal": [Function],
+      "on_destroy": Array [
+        [Function],
+      ],
+      "on_mount": Array [],
+      "props": Object {
+        "century": 5,
+        "colors": 1,
+        "description": 0,
+        "image": 3,
+        "medium": 6,
+        "period": 2,
+        "title": 4,
+      },
+      "update": [Function],
+    },
+    "$capture_state": [Function],
+    "$inject_state": [Function],
+    "$set": [Function],
+  },
+  "container": <body>
+    <div>
+      <article
+        class="svelte-121edkc"
+      >
+        <img
+          alt="The Mona Lisa"
+          class="svelte-121edkc"
+        />
+         
+        <div
+          class="colors-container svelte-121edkc"
+        />
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Title:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            The Mona Lisa
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Time:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            17th CE
+             - 
+            Romantic Period
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Medium:
+          </h4>
+           
+          <p
+            class="svelte-121edkc"
+          >
+            Paint on Canvas
+          </p>
+        </div>
+         
+        <div
+          class="svelte-121edkc"
+        >
+          <h4
+            class="svelte-121edkc"
+          >
+            Description:
+          </h4>
+           
+          <p
+            class="description-p svelte-121edkc"
+          >
+            A woman with a creepy smile
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
