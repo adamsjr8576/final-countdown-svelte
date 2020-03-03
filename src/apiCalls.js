@@ -18,7 +18,7 @@ export const getAllPlaces = async (page) => {
   }
 }
 
-export const getAllClassifications = async (page) => {
+export const getAllClassifications = async () => {
   let res = await fetch(`https://api.harvardartmuseums.org/classification?size=100&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
   let classifications = await res.json();
   if (res.ok) {
@@ -28,7 +28,7 @@ export const getAllClassifications = async (page) => {
   }
 }
 
-export const getAllGalleries = async (page) => {
+export const getAllGalleries = async () => {
   let res = await fetch(`https://api.harvardartmuseums.org/gallery?size=100&apikey=c7ad4d00-5bf5-11ea-80aa-f5d9d18048cb`);
   let gallery = await res.json();
   if (res.ok) {
