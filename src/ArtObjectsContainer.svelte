@@ -1,11 +1,15 @@
 <script>
   import { artObjects } from './stores.js';
   import ArtObject from './ArtObject.svelte';
+
+  const handleGoBack = () => {
+    artObjects.set([]);
+  }
 </script>
 
 <section>
   <div>
-    <button>Back</button>
+    <button on:click={handleGoBack} >Back</button>
   </div>
   <div class="art-object-containers">
     {#each $artObjects as artObject}
@@ -52,6 +56,25 @@
     overflow: auto;
     flex-wrap: wrap;
     height: 600px;
+  }
+
+  button {
+    width: 100px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: 0;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: #F6F6FB;
+  }
+
+  button:hover,
+  button:focus {
+    border: 2px solid #ff3e00;
+  }
+
+  button:active {
+    transform: scale(.95);
   }
 
 </style>

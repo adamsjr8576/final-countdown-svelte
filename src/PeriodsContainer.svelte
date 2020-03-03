@@ -32,10 +32,15 @@
     searchPeriods();
   }
 
+  const handleGoBack = () => {
+    selectedOption.set('');
+  }
+
 </script>
 
 <section>
   <form>
+    <button on:click={handleGoBack} >Back</button>
     <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
     <button on:click|preventDefault={searchPeriods}>Search</button>
     <button on:click|preventDefault={handleReset} class="reset-button">Reset</button>
