@@ -48,6 +48,12 @@
 		text-decoration: underline;
 	}
 
+	@media screen and (max-width: 625px) {
+	  header {
+			height: 200px;
+	  }
+	}
+
 	@media screen and (max-width: 375px) {
 	  header {
 			height: 250px;
