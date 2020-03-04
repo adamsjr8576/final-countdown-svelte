@@ -14,7 +14,7 @@
 
 </script>
 
-<p on:click={handleClick} tabIndex=2 >{name}</p>
+<p data-testid='option-p' on:click={handleClick} tabIndex=2 >{name}</p>
 
 <style>
 

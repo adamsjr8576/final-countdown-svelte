@@ -50,25 +50,25 @@
 
 <h4>Please select a category below: </h4>
 <section>
-  <article class='period-article' on:click={getPeriods}>
+  <article data-testid='period-article' class='period-article' on:click={getPeriods}>
     <h2>Period</h2>
     <p>Contains the periods used to describe items
     in the Harvard Art Museums collections.
     </p>
   </article>
-  <article class='place-article' on:click={getPlaces}>
+  <article data-testid='place-article' class='place-article' on:click={getPlaces}>
     <h2>Place</h2>
     <p>Contains the location used to describe items
     in the Harvard Art Museums collections.
     </p>
   </article>
-  <article class='classification-article' on:click={getClassifications}>
+  <article data-testid='classification-article' class='classification-article' on:click={getClassifications}>
     <h2>Classification</h2>
     <p>Contains the Classifications used to describe
     item in the Harvard Art Museums collections.
     </p>
   </article>
-  <article class='gallery-article' on:click={getGalleries}>
+  <article data-testid='gallery-article' class='gallery-article' on:click={getGalleries}>
     <h2>Gallery</h2>
     <p>Contains the Galleries and their items
     in the Harvard Art Museums collections.
