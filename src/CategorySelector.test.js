@@ -4,7 +4,7 @@ import { getAllPeriods, getAllPlaces, getAllClassifications, getAllGalleries } f
 
 jest.mock('./apiCalls.js');
 
-describe('App', () => {
+describe('CategorySelector', () => {
   it('should match the snapshot', () => {
     const wrapper = render(CategorySelector);
 
