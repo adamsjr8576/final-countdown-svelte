@@ -121,4 +121,16 @@
     overflow: auto;
     padding: 0 25px;
   }
+
+  @media screen and (max-width: 375px) {
+    .back-button {
+      margin: 0;
+    }
+
+    form {
+      flex-direction: column;
+      height: 175px;
+      justify-content: space-around;
+    }
+	}
 </style>
