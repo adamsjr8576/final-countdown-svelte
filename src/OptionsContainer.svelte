@@ -41,12 +41,12 @@
 <section>
   <form>
     <button class="back-button" on:click={handleGoBack} >Back</button>
-    <input on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
-    <button on:click|preventDefault={searchOptions}>Search</button>
-    <button on:click|preventDefault={handleReset} class="reset-button">Reset</button>
+    <input data-testid='search-input' on:keydown={handleKeyDown} bind:value={search} placeholder="search period..." />
+    <button data-testid='search-button' on:click|preventDefault={searchOptions}>Search</button>
+    <button data-testid='reset-button' on:click|preventDefault={handleReset} class="reset-button">Reset</button>
   </form>
   <div>
-    <p hidden={!hasError}>There are no matches for {search}</p>
+    <p data-testid='search-error' hidden={!hasError}>There are no matches for {search}</p>
     {#each options as option}
       <Option name={option.name} id={option.id} />
     {/each}
