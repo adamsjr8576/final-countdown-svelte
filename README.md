@@ -1,93 +1,35 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Harvard Art Museum Records
 
----
+## Creators
+- See full application here [Harvard Art Museum Records](http://harvard-art-records.surge.sh/)
+- John Adams - [github](https://github.com/adamsjr8576)
 
-# svelte app
+## Overview
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+- Harvard Art Museum Records is a project meant to simulate a take home challenge within an interview process. We were given a brief spec and around two days to complete the project. The project implements a never before used framework, Svelte. The project uses the Harvard Art Museum API and is meant to display their digital collections in an interesting way. 
 
 
-## Get started
+## SetUp
+- Clone Repo down or fork then clone Repo
+- In Terminal: cd into directory
+- Run `npm install`
+- Run `npm run dev` to create locally hosted server to run app
+- Open app in broweser on `http://localhost:5000/`
+- run `npm test` to see see test suite
 
-Install the dependencies...
+## Goals
 
-```bash
-cd svelte-app
-npm install
-```
+#### Demonstrate: 
 
-...then start [Rollup](https://rollupjs.org):
-
-```bash
-npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+ - Professional workflow (git branches, commits, project board)
+ - Front-end engineering knowledge learned throughout time at Turing
+ - The ability to use a concept/library/framework that you have not been taught explicitly at Turing
+ - Get a fully functioning app working in an unknown framework up and running in a short window
 
 
-## Building and running in production mode
+## Tech Stack
+HTML5 | CSS3 | Svelte | Fetch API | Jest | Svelte-Testing-Library | Javascript ES6 | Surge
 
-To create an optimised version of the app:
+## UX/UI
 
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/49846853/75844657-eadab980-5d93-11ea-8023-a8e6285a8b51.gif)
