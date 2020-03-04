@@ -48,7 +48,7 @@
 		text-decoration: underline;
 	}
 
-	@media screen and (max-width: 625px) {
+	@media screen and (max-width: 675px) {
 	  header {
 			height: 200px;
 	  }
